@@ -3,3 +3,5 @@
 src/main/R/retrieved.tsv
 /output/*
 !/output/.gitkeep
+/input/*
+!/input/.gitkeep

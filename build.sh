@@ -11,5 +11,9 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 eval "$(conda shell.bash hook)"
 conda activate ${SCRIPT_DIR}/env/
 
+
+kaggle competitions download  energy-forecasting-data-challenge -p ${SCRIPT_DIR}/input
+unzip ${SCRIPT_DIR}/input/energy-forecasting-data-challenge.zip ${SCRIPT_DIR}/input
+
 #papermill  --request-save-on-cell-execute --autosave-cell-every 5  --progress-bar --log-output src/main/R/ExecuteLiteratureQuery.ipynb output/ExecuteLiteratureQuery.ipynb  -p inputdir src/main/data -p outputdir $(pwd)/output
 #jupyter nbconvert --to html --embed-images output/ExecuteLiteratureQuery.ipynb
